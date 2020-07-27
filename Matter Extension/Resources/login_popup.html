@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <style>
+        .screen {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .loginScreen {
+            width: 234px;
+            height: 206px;
+        }
+        .loginScreenInner {
+            max-width: 180px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .headline {
+            margin-top: 36px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            line-height: 29px;
+            font-weight: bold;
+            color: #1a1a1a;
+            letter-spacing: -0.04em;
+        }
+        .subheader {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 500;
+            color: #808080;
+            letter-spacing: -0.03em;
+        }
+        .message {
+            font-size: 14px;
+        }
+        .qrContainer {
+            width: 100px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 14px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+        }
+        #qr_code {
+            width: 100px;
+            height: 100px;
+        }
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+<script src="qrious.min.js"></script>
+<script src="constants.js"></script>
+<script src="utils.js"></script>
+<script src="domUtils.js"></script>
+<script src="login.js"></script>
+<script src="recommend.js"></script>
+<script src="save.js"></script>
+<script src="qrLogin.js"></script>
+<script src="screens.js"></script>
+<script src="popup.js"></script>
+<script src="loginPopup.js"></script>
+<div id="qr_login_screen" class="screen loginScreen hidden">
+    <div class="loginScreenInner">
+        <div id="login_form">
+            <h1 class="headline">Login to Matter</h1>
+            <h2 class="subheader">
+                Scan this QR code with your Matter iOS app
+            </h2>
+            <div class="qrContainer">
+                <canvas id="qr_code"></canvas>
+            </div>
+        </div>
+        <div id="qr_login_message" class="message"></div>
+    </div>
+</div>
+</body>
+</html>

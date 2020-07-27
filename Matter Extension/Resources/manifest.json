@@ -1,0 +1,37 @@
+{
+   "background": {
+      "persistent": true,
+      "scripts": [ "qrious.min.js", "constants.js", "utils.js", "domUtils.js", "login.js", "recommend.js", "save.js", "qrLogin.js", "screens.js", "popup.js", "context.js", "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "128": "images/wMatterIcon128px.png",
+         "32": "images/wMatterIcon32px.png",
+      },
+      "default_popup": "login_popup.html",
+      "default_title": "Save to Matter"
+   },
+   "commands": {
+      "_execute_browser_action": {
+         "description": "Save to Matter",
+         "suggested_key": {
+            "chromeos": "Ctrl+M",
+            "linux": "Ctrl+M",
+            "mac": "MacCtrl+M",
+            "windows": "Ctrl+M"
+         }
+      }
+   },
+   "description": "Save articles to Matter app",
+   "icons": {
+      "128": "images/wMatterIcon128px.png",
+      "32": "images/wMatterIcon32px.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEApb4JdwrSey7wVmPyvsxBKo6LOjqI3us83E9wUQJ1yMNISMJbWdbreRsWHnk4DVqwQnBO34mKo1F5KjgaHz9pe3cNfoDOK8hGAS3tvTfDNtFVdK4hYbBglAoYUj2M8/7lipQh/Ng5r+JBxW8VuulsbzT6Old+JTz0JIlV6xKt40mWHXYSIRuSZduvsgevhQl2TiDZuWYE3Dtm0SmxP5se8gPgZvvGLOiVLiE5r0WS9Dp9JDw3KHhzPXCA9VOegJLoFVJFyAp1w+v4LiDrCLf9vr9gs79PZvffeJD5BSBCzeXhfbwdrsGCTRUnFg0h+wWkpFiMg9k7pFIHUu20Mm6LCwIDAQAB",
+   "manifest_version": 2,
+   "name": "Matter",
+   "permissions": [ "storage", "activeTab", "contextMenus", "https://getmatter.app/*/" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "0.0.0.4",
+   "web_accessible_resources": [ "images/Bookmark.png", "login_popup.html", "popup.html", "popupFrame.css" ]
+}

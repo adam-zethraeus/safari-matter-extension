@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href='https://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: Lato, Arial, sans-serif;
+        }
+        .screen {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        .loginScreen {
+            width: 234px;
+            height: 206px;
+        }
+        .loginScreenInner {
+            max-width: 180px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .saveScreen {
+            margin-bottom: 24px;
+        }
+        .recommendScreen {
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        .headline {
+            margin-top: 36px;
+            margin-bottom: 10px;
+            font-size: 24px;
+            line-height: 29px;
+            font-weight: bold;
+            color: #1a1a1a;
+            letter-spacing: -0.04em;
+        }
+        .subheader {
+            margin-top: 10px;
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 500;
+            color: #808080;
+            letter-spacing: -0.03em;
+        }
+        .saveHeadline {
+            margin-bottom: 6px;
+            font-size: 17px;
+            line-height: 20px;
+            font-weight: 600;
+            color: #333333;
+            letter-spacing: -0.007em;
+        }
+        .message {
+            font-size: 14px;
+        }
+        .recommendMessage {
+            min-height: 20px;
+        }
+        .button.savePostButton {
+            margin-top: 28px;
+            padding: 6px 16px;
+            width: 154px;
+            background: #333333;
+            border: none;
+            box-sizing: border-box;
+            border-radius: 7px;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 500;
+            letter-spacing: -0.005em;
+        }
+        .instructionsHeadline {
+            margin-top: 28px;
+            margin-bottom: 10px;
+            font-size: 12px;
+            line-height: 14px;
+            font-weight: bold;
+            color: #4d4d4d;
+            letter-spacing: -0.03em;
+        }
+        .instructionItem {
+            margin-top: 6px;
+            padding: 6px;
+            font-size: 14px;
+            line-height: 17px;
+            font-weight: bold;
+            color: #4d4d4d;
+            letter-spacing: -0.03em;
+            border-radius: 4px;
+        }
+        .instructionItemHighlighted {
+            background-color: #ffe99a;
+        }
+        .instructionIconArrow {
+            position: absolute;
+            top: 5px;
+            right: 20px;
+            width: 30px;
+            height: 30px;
+        }
+        .link {
+            color: #009ffc;
+        }
+        .qrContainer {
+            width: 100px;
+            height: 100px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 14px;
+            background-color: #f2f2f2;
+            border-radius: 8px;
+        }
+        #qr_code {
+          width: 100px;
+          height: 100px;
+        }
+        .bookmarkIcon {
+            margin-top: 15px;
+            margin-bottom: 8px;
+            width: 14px;
+            height: 20px;
+        }
+        .postIcon {
+            margin-top: 13px;
+            margin-bottom: 8px;
+            width: 14px;
+            height: 20px;
+        }
+        .closeIcon{
+            width: 24px;
+            height: 24px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .closeIcon:hover {
+            cursor: pointer;
+        }
+        .hidden {
+            display: none !important;
+        }
+        .button {
+            display: block;
+            margin-right: auto;
+            margin-left: auto;
+            padding: 6px 16px;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            border: none;
+            border-radius: 30px;
+            background-color: #4a4a4a;
+            font-weight: bold;
+            color: #FFFFFF;
+            font-family: Lato, Arial, sans-serif;
+        }
+        .button:hover {
+            cursor: pointer;
+            background-color: #333333;
+        }
+        .recommendClose {
+            font-size: 16px;
+            line-height: 19px;
+            font-weight: 500;
+            font-style: normal;
+            color: #666666;
+            letter-spacing: -0.003em;
+        }
+        .recommendClose:hover {
+            cursor: pointer;
+        }
+        .button.recommendSubmit {
+            margin-left: 0;
+            margin-right: 0;
+            width: 90px;
+            background: #009FFC;
+            border: none;
+            box-sizing: border-box;
+            border-radius: 7px;
+            font-size: 16px;
+            line-height: 20px;
+            font-weight: 500;
+            letter-spacing: -0.003em;
+        }
+        .button.recommendSubmit:hover {
+            background-color: #009FFC;
+        }
+        .recommendBlurb {
+            margin-top: 10px;
+            margin-bottom: 6px;
+            width: 100%;
+            height: auto;
+            min-height: 55px;
+            max-height: 500px;
+            resize: none;
+            font-size: 16px;
+            line-height: 21px;
+            color: #333333;
+            border: none;
+            font-family: inherit;
+            letter-spacing: -0.007em;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            box-sizing: border-box;
+        }
+        .recommendBlurb:focus {
+            outline: none;
+        }
+        .recommendBlurb::placeholder {
+            font-size: 16px;
+            line-height: 21px;
+            letter-spacing: -0.007em;
+        }
+        .recommendButtonsContainer {
+            margin-top: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<script src="autosize.min.js"></script>
+<script src="qrious.min.js"></script>
+<script src="constants.js"></script>
+<script src="utils.js"></script>
+<script src="domUtils.js"></script>
+<script src="instructionsEmbed.js"></script>
+<script src="saveEmbed.js"></script>
+<script src="recommendEmbed.js"></script>
+<script src="popupEmbed.js"></script>
+<div id="qr_login_success_screen" class="screen loginScreen hidden">
+    <div class="loginScreenInner">
+        <div id="instructions_close_button" class="instructionsClose" role="button">
+            <img src="images/XGray@2x.svg" alt="close tutorial" class="closeIcon">
+        </div>
+        <h1 id="login_success_headline" class="headline">
+            Success!
+        </h1>
+        <h2 class="subheader">
+            You can now save articles to your iOS app
+        </h2>
+        <div class="instructionsHeadline">Try it now:</div>
+        <div>
+            <div id="instruction_step_1_linked" class="instructionItem">
+                1. <a id="tutorial_article_link" href="https://www.nytimes.com/2012/06/26/opinion/brooks-the-power-of-the-particular.html" class="link">Go to an article</a>
+            </div>
+            <div id="instruction_step_2" class="instructionItem">
+                2. Click the extension
+            </div>
+        </div>
+    </div>
+</div>
+<div id="save_screen" class="screen saveScreen hidden">
+    <img src="images/BookmarkOrange.svg" alt="bookmark" class="bookmarkIcon">
+    <div id="save_headline" class="saveHeadline">Saving article...</div>
+    <div id="save_message" class="message"></div>
+    <button id="save_post_button" class="hidden button savePostButton">Post Article</button>
+</div>
+<div id="recommend_screen" class="screen recommendScreen hidden">
+    <form id="recommend_form">
+        <textarea id="recommend_blurb" class="recommendBlurb"
+                  placeholder="Would you like to add anything?"></textarea>
+        <div id="recommend_message" class="message recommendMessage">&nbsp;</div>
+        <div class="recommendButtonsContainer">
+            <div id="recommend_close_button" class="recommendClose" role="button">Close</div>
+            <input id="recommend_post_button" class="button recommendSubmit"
+                   type="submit" value="Post" />
+        </div>
+    </form>
+</div>
+<div id="recommend_success_screen" class="screen recommendScreen hidden">
+    <img src="images/PostIcon.svg" alt="" role="presentation" class="postIcon">
+    <div class="saveHeadline">Posted to Matter!</div>
+</div>
+</body>
+</html>

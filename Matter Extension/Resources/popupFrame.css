@@ -1,0 +1,19 @@
+.matter_qr_login_screen_frame, .matter_qr_login_success_screen_frame {
+    width: 234px;
+    height: 265px;
+}
+.matter_save_screen_frame {
+    width: 192px;
+    height: 154px;
+}
+.matter_recommend_success_screen_frame {
+    width: 192px;
+    height: 100px;
+}
+.matter_recommend_screen_frame {
+    width: 388px;
+    min-height: 154px;
+}
+.matter_hidden {
+    display: none !important;
+}
